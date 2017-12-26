@@ -1,5 +1,3 @@
-let score = 0;
-
 const beginGame = function() {
   start = document.getElementById('start');
   start.onclick = startGame;
@@ -29,9 +27,14 @@ const actionTobePerformed = function() {
     updateScore();
   }
   if (game.isFruitNotInBowl()) {
-    alert('game over'+'\n'+`your score:${score}`);
+    alertScore();
     restartGame();
   }
+}
+
+const alertScore = function() {
+  let score = document.getElementById('score').innerText;
+  alert('game over'+'\n'+`your score:${score}`);
 }
 
 const fallFruit = function() {
@@ -42,7 +45,7 @@ const fallFruit = function() {
 }
 
 const updateScore = function() {
-  let score = document.getElementById('score').innerText++;
+  document.getElementById('score').innerText++;
   clearInterval(intervals);
   game.fruit = new Fruit();
   throwFruitFromPos();
