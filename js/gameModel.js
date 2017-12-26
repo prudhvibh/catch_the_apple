@@ -25,6 +25,6 @@ Bowl.prototype = {
 
   HandleBowlPosInBox: function() {
     if(this.position < 0) this.position = 0;
-    if(this.position > 1100) this.position = 1100;
+    if(this.position > 1190) this.position = 1190;
   }
 }
